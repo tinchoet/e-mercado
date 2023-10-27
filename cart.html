@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>eMercado - Todo lo que busques está aquí</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav w-100 justify-content-between">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sell.html">Vender</a>
+          </li>
+          <li> <a class="nav-link" href="login.html"><span class="icon">U</span>  Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main class="ms-5 me-5">
+    <div class="container">
+        <div id="contenedorCarrito"><div class="agruparBtn"><h3>Contenido Agregado: </h3><button id="limpiarProd" class="btn btn-danger">Limpiar Productos</button></div>
+          <table>
+            <!--Encabezado de la tabla -->
+            <thead> 
+              <th> </th>
+              <th>Nombre</th>
+              <th id="costoTh">Costo</th>
+              <th>Cantidad</th>
+              <th>Subtotal</th>
+            </thead>
+            <!--Cuerpo de la tabla-->
+            <tbody id="lista">
+              <!--Aquí se cargarán los productos-->
+            </tbody>
+            <tbody id="lista2">
+
+            </tbody>
+            
+            
+          </table>
+        
+        </div>
+<hr>
+<h3 class="mb-3">Formulario de Envío</h3>
+<form id="formulario">
+
+    <input type="radio" name="envio" id="Premiun" class="mb-4"> Premiun 2 a 5 dias (15%) <br>
+    <input type="radio" name="envio" id="Express" class="mb-4"> Express 5 a 8 dias (7%) <br>
+    <input type="radio" name="envio" id="Standard" class="mb-4"> Standard 8 a 15 dias (5%)
+<br>
+<hr>
+<h4>Direccion Envio</h4>
+    <label for="calle">Calle:</label>
+    <input type="text" id="calle" name="calle" required>
+
+    <label for="numero">Número:</label>
+    <input type="text" id="numero" name="numero" required>
+
+    <label for="esquina">Esquina:</label>
+    <input type="text" id="esquina" name="esquina" required><br>
+
+    <button type="submit">Enviar</button><br><br><br>
+</form>
+      </div>
+    </div>
+    <div id="containerCostos">
+      <h3 class="m-3">Costos</h3>
+      <div class="ms-3 me-3">
+        <h5 class="centrarh5">Subtotal</h5>
+        <span class="spancentrado">Costo Unitario por Producto</span>
+        <p id="subtotal"></p>
+        <hr>
+      </div>
+      <div class="ms-3">
+        <h5 class="centrarh5">Costo Envio</h5>
+        <span class="spancentrado">Segun el tipo de Envio</span>
+      </div>
+      <hr>
+      <div>
+        <h5 class="centrarh5 m-3">Total ($)</h5>
+      </div>
+
+
+    </div>
+    <p id="clearfix"></p>
+    </div>
+
+    <div class="ms-5 me-5" >
+      <hr>
+      <h3>Forma de pago</h3>
+      <p>No ha seleccionado <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Seleccionar</a></p>
+    <hr class="mb-5">
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Forma de pago</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+        <label class="form-check-label text-secondary" for="flexRadioDefault1">
+          Tarjeta de crédito
+        </label>
+
+        <hr>
+        
+        <label class="form-label text-secondary"> <i class="fa fa-credit-card"></i> Número de tarjeta</label>
+        <input class="form-control" type="text" placeholder="0000 0000 0000 0000" autocomplete="email">
+
+
+        <label class="form-label text-secondary"> <i class="fa fa-info-circle"></i> Código de seg.</label>
+        <input type="text" maxlength="3" class="form-control">
+
+        <label class="form-label text-secondary">Vencimiento (MM/AA)</label>
+        <input type="month" class="form-control mb-3">
+
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+        <label class="form-check-label text-secondary" for="flexRadioDefault1">
+          Transferencia bancaria
+        </label>
+
+        <hr>
+
+        <label class="form-label text-secondary">Número de cuenta</label>
+        <input type="text" maxlength="12" class="form-control">
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <input type="button" value="Finalizar Compra" id="btn">
+</div>
+<br><br><br>
+    </div>
+  </main>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-end">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+    </div>
+  </footer>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+
+</html>
