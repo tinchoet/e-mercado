@@ -952,3 +952,73 @@ input[type="button"] {
   border-radius: 5px;
 
 }
+
+.margenPers{
+  margin-bottom: 150px;
+}
+#formPerfil {
+  max-width: 6000px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+#txtNombre,
+#txtApellido,
+#txtEmail,
+#txtSegundoNombre,
+#txtSegundoApellido,
+#txtTelefono {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#btnValidar {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#btnValidar:hover {
+  background-color: #45a049;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #ccc;
+  margin: 20px 0;
+}
+
+#imgPerfil {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+}
+#imgPerfil:hover {
+  background-color: #007bff;
+}
+#imagenContainer img {
+  max-width: 100%;
+  max-height: 80px;
+  border-radius: 5px; 
+  display: flex;
+  margin-left: 89%;
+}

@@ -29,7 +29,16 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li> <a class="nav-link" href="login.html"><span class="icon">U</span>  Login</a>
+          <button onclick="cambiarTema()" class="btn  luna rounded-fill"><i id="dl-icon" class="bi bi-moon-fill"></i></button>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html"><span class="icon">U</span> <span id="emailPersona"></span></a>
+              <ul class="ulchico">
+                
+                <li class="lichico"><a href="cart.html">Carrito</a></li>
+                <li class="lichico"><a href="my-profile.html">Mi perfil</a></li>
+                <li class="lichico"><a href="login.html">Cerrar sesión</a></li>
+              </ul>
+            </li>
           </li>
         </ul>
       </div>
@@ -63,7 +72,7 @@
 <h3 class="mb-3">Formulario de Envío</h3>
 <form id="formulario">
 
-    <input type="radio" name="envio" id="Premiun" class="mb-4"> Premiun 2 a 5 dias (15%) <br>
+    <input type="radio" name="envio" id="Premium" class="mb-4"> Premium 2 a 5 dias (15%) <br>
     <input type="radio" name="envio" id="Express" class="mb-4"> Express 5 a 8 dias (7%) <br>
     <input type="radio" name="envio" id="Standard" class="mb-4"> Standard 8 a 15 dias (5%)
 <br>
@@ -87,16 +96,17 @@
       <div class="ms-3 me-3">
         <h5 class="centrarh5">Subtotal</h5>
         <span class="spancentrado">Costo Unitario por Producto</span>
-        <p id="subtotal"></p>
+        <p>$<span id="subtotal"></span></p>
         <hr>
       </div>
       <div class="ms-3">
         <h5 class="centrarh5">Costo Envio</h5>
         <span class="spancentrado">Segun el tipo de Envio</span>
+        <p>$<span id="costoenvio"></span></p>
       </div>
       <hr>
       <div>
-        <h5 class="centrarh5 m-3">Total ($)</h5>
+        <h5 class="centrarh5 m-3">Total ($)<span id="costofinal"></span></h5>
       </div>
 
 
@@ -107,7 +117,8 @@
     <div class="ms-5 me-5" >
       <hr>
       <h3>Forma de pago</h3>
-      <p>No ha seleccionado <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Seleccionar</a></p>
+      <p id="formapago"></p> 
+      <span><a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Seleccionar</a></span>
     <hr class="mb-5">
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -119,7 +130,7 @@
       </div>
       <div class="modal-body">
 
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+        <input class="form-check-input" type="radio" name="flexRadioDefault metodopago" id="pagotarjetaCredito">
         <label class="form-check-label text-secondary" for="flexRadioDefault1">
           Tarjeta de crédito
         </label>
@@ -127,16 +138,16 @@
         <hr>
         
         <label class="form-label text-secondary"> <i class="fa fa-credit-card"></i> Número de tarjeta</label>
-        <input class="form-control" type="text" placeholder="0000 0000 0000 0000" autocomplete="email">
+        <input class="form-control" type="text" placeholder="0000 0000 0000 0000" id="numerotarjeta">
 
 
         <label class="form-label text-secondary"> <i class="fa fa-info-circle"></i> Código de seg.</label>
-        <input type="text" maxlength="3" class="form-control">
+        <input type="text" maxlength="3" class="form-control" id="codigoseguridad">
 
         <label class="form-label text-secondary">Vencimiento (MM/AA)</label>
-        <input type="month" class="form-control mb-3">
+        <input type="month" class="form-control mb-3" id="vencimientotarjeta">
 
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+        <input class="form-check-input" type="radio" name="flexRadioDefault metodopago" id="pagoTransferencia">
         <label class="form-check-label text-secondary" for="flexRadioDefault1">
           Transferencia bancaria
         </label>
@@ -144,17 +155,18 @@
         <hr>
 
         <label class="form-label text-secondary">Número de cuenta</label>
-        <input type="text" maxlength="12" class="form-control">
+        <input type="text" maxlength="12" class="form-control" id="numerocuenta">
       </div>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="confirmarinfo">Confirmar</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="cerrarmodal">Cerrar</button>
       </div>
     </div>
   </div>
 </div>
 <div>
-  <input type="button" value="Finalizar Compra" id="btn">
+  <input type="button" value="Finalizar Compra" id="btncomprar">
 </div>
 <br><br><br>
     </div>

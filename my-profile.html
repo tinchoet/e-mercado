@@ -44,18 +44,53 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li> <a class="nav-link" href="login.html"> Login</a>
+          <button onclick="cambiarTema()" class="btn  luna rounded-fill"><i id="dl-icon" class="bi bi-moon-fill"></i></button>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html"><span class="icon">U</span> <span id="emailPersona"></span></a>
+              <ul class="ulchico">
+                
+                <li class="lichico"><a href="cart.html">Carrito</a></li>
+                <li class="lichico"><a href="my-profile.html">Mi perfil</a></li>
+                <li class="lichico"><a href="login.html">Cerrar sesión</a></li>
+              </ul>
+            </li>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
+    <div class="container margenPers" >
+      <h1 id="perfilh1">Perfil</h1>
+      <div id="imagenContainer"><img id="previewImage" src="./img/perfil.png" alt="imagen"></div>
+      <hr>
+      <form id="formPerfil">
+      <label for="txtNombre" >Primer nombre*</label>
+      <input type="text" id="txtNombre" required class="form-control"><br>
+
+      <label for="txtApellido">Primer apellido*</label>
+      <input required type="text" id="txtApellido"><br>
+
+      <label for="txtEmail"> E-mail*</label>
+      <input required type="text" id="txtEmail"><br>
+
+      <label for="txtSegundoNombre">Segundo nombre</label>
+      <input  type="text" id="txtSegundoNombre"><br>
+
+      <label for="txtSegundoApellido">Segundo apellido</label>
+      <input  type="text" id="txtSegundoApellido"><br>
+
+      <label for="txtTelefono"> Telefono de contacto</label>
+      <input type="text" id="txtTelefono"><br>
+      <label for="imgPerfil">Imagen Perfil</label>
+    <input type="file" id="imgPerfil" onchange="mostrarImagen(imagenInput, imagenContainer)">
+   
+     
+      <hr>
+      <input type="button" value="Guardar Cambios" id="btnValidar" class="btn btn-success">
+    </form>
     </div>
+    
   </main>
   <footer class="text-muted">
     <div class="container">
@@ -67,6 +102,7 @@
   </footer>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <script src="js/my-profile.js"></script>
 </body>
 
